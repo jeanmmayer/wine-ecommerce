@@ -1,0 +1,8 @@
+{
+    "name": "wine-ecommerce",
+    "version": "1.0.0",
+    "dependencies": {
+        "angular": "^1.7.9",
+        "angular-route": "^1.7.9"
+    }
+}
