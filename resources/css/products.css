@@ -1,3 +1,32 @@
-.products-table {
-    margin-top: 20px;
+.prod-name {
+    font-weight: bold;
+}
+
+.prod-description {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.products-container table td:first-child {
+    width: 5%;
+}
+
+.products-container table td:nth-child(2) {
+    width: 10%;
+}
+
+.products-container table td:nth-child(3) {
+    width: 50%;
+}
+
+.products-container table td:nth-child(4) {
+    width: 10%;
+}
+
+.products-container table td:nth-child(5) {
+    width: 10%;
+}
+
+.products-container table td:nth-child(6) {
+    width: 10%;
 }

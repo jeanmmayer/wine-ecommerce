@@ -1,6 +1,7 @@
 var app = angular.module(
 	'baseApp', [
-		'ngRoute'
+        'ngRoute',
+        'rw.moneymask'
 	]
 );
 

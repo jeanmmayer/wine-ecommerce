@@ -27,9 +27,15 @@ a {
 
 .container {
     padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .page-title hr {
     border-bottom: none;
     border-color: rgba(0, 0, 0, .2);
+}
+
+.text-center {
+    text-align: center;
 }

@@ -31,7 +31,7 @@ app.factory('products', function($http) {
         }).then(function(result) {
             return result;
         });
-	};
+    };
 
 	var load = function() {
         return $http({

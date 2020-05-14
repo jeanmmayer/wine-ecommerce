@@ -1,6 +1,7 @@
 @import "base.css";
 @import "components/button.css";
 @import "components/table.css";
+@import "components/form.css";
 @import "header.css";
 @import "orders.css";
 @import "products.css";

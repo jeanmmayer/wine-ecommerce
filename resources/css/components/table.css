@@ -5,6 +5,7 @@ table {
     width: 100%;
     background-color: white;
     border-radius: 3px;
+    margin-top: 20px;
 }
 
 table tr td {

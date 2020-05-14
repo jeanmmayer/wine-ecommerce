@@ -29,6 +29,7 @@
         <!-- angular scripts -->
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <script src="node_modules/angular-money-mask/rw-money-mask.min.js"></script>
 
         <!-- application scripts -->
         <script src="resources/js/app.js"></script>

@@ -1,0 +1,33 @@
+input[type='text'], textarea, select {
+    padding: 10px;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    outline: none;
+    width: 300px;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form .input-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+form .input-container div {
+    max-width: 322px;
+    text-align: left;
+    padding: 6px 0;
+    margin: auto;
+}
+
+form select {
+    width: 322px;
+}
