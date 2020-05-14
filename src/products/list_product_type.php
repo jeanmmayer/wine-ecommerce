@@ -15,3 +15,5 @@ $sql = "
 ";
 
 echo json_encode(listingQuery($con, $sql));
+
+closeCon($con);

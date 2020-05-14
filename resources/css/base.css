@@ -39,3 +39,10 @@ a {
 .text-center {
     text-align: center;
 }
+
+.empty-data {
+    width: 100%;
+    color: rgba(0, 0, 0, .5);
+    text-align: center;
+    padding: 20px;
+}

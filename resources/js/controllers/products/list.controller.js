@@ -12,7 +12,6 @@ app.controller('listProductsController', [
 
 	$scope.products = {};
 	$scope.cart = {};
-
 	$scope.page = 0;
 
 	$scope.listProducts = function(page) {

@@ -16,3 +16,5 @@ $sql = "
 ";
 
 echo json_encode(operationQuery($con, $sql));
+
+closeCon($con);

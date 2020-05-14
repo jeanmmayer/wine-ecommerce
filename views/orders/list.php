@@ -1,4 +1,4 @@
-<div class="container products-container">
+<div class="container orders-container">
     <div class="page-title">
         <h3>
             Pedidos
@@ -7,34 +7,43 @@
                 ng-click="redirect('orders/new')"
             >
 
-                <i class="fa fa-plus"></i> Cadastrar
+                <i class="fa fa-plus"></i> Realizar Venda
             </button>
         </h3>
         <hr>
     </div>
 
-    <table class="orders-table">
+    <div class="empty-data" ng-if="!orders.length">
+        Não há pedidos registrados.
+    </div>
+    <table class="orders-table" ng-if="orders.length">
         <thead>
             <tr>
                 <td>ID</td>
                 <td>Cliente</td>
-                <td>Distância</td>
                 <td>Produtos</td>
-                <td>Preço Total</td>
-                <td></td>
+                <td>Distância (km)</td>
+                <td>Preço Total (R$)</td>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="p in products">
-                <td>#{{ p.id }}</td>
-                <td>{{ p.type_name }}</td>
-                <td>{{ p.name }}</td>
-                <td>{{ p.weight }}</td>
-                <td>{{ p.price }}</td>
+            <tr ng-repeat="o in orders">
+                <td>#{{ o.id }}</td>
+                <td>{{ o.customer }}</td>
                 <td>
-                    <button class="btn" ng-click="editProduct(p.id)"><i class="fa fa-edit"></i></button>
-                    <button class="btn" ng-click="removeProduct(p.id)"><i class="fa fa-close"></i></button>
+                    <table>
+                        <tr ng-repeat="p in o.products">
+                            <td>
+                                <strong>{{ p.quantity }}</strong>
+                            </td>
+                            <td>
+                                {{ p.name }}
+                            </td>
+                        </tr>
+                    </table>
                 </td>
+                <td>{{ o.distance }}</td>
+                <td>{{ o.value }}</td>
             </tr>
         </tbody>
     </table>

@@ -6,8 +6,6 @@ $con = openCon();
 
 $sql = generateSql();
 
-error_log($sql);
-
 if(isset($_POST['id'])) {
     echo json_encode(operationQuery($con, $sql));
 } else {
@@ -59,3 +57,5 @@ function generateSql() {
         ";
     }
 }
+
+closeCon($con);

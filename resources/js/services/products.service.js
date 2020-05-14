@@ -3,6 +3,9 @@ app.factory('products', function($http) {
     var id_edit = "";
 
     var list = function(page) {
+        if(!page) {
+            page = "";
+        }
         return $http({
             method:"POST",
             data: "page=" + page,

@@ -6,6 +6,8 @@ button {
     border: none;
     cursor: pointer;
     transition: .3s;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .btn-default {

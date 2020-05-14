@@ -1,8 +1,9 @@
 <?php
 
 function resolvePage($page) {
-    if(!$page) {
-        return 0;
+    if(is_numeric($page)) {
+        return $page * 10;
     }
-    return $page * 10;
+
+    return 0;
 }

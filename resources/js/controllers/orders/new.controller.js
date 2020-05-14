@@ -1,9 +1,29 @@
 app.controller('newOrderController', [
+	"products",
 	"$scope",
+	"$location",
 	function(
-		$scope
+		products,
+		$scope,
+		$location
 	) {
 
-        console.log("novo pedido");
+	$scope.productsAdded = [];
+	$scope.showModal = false;
+
+	$scope.listProducts = function() {
+		var prod = products.list();
+		prod.then(function(result) {
+			$scope.products = result;
+		}, function(error) {
+			// erro ao listar
+		});
+	};
+
+	$scope.openAddProduct = function() {
+		$scope.showModal = true;
+	};
+
+	$scope.listProducts();
 
 }]);

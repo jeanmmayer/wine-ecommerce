@@ -12,7 +12,10 @@
         </h3>
         <hr>
     </div>
-    <table class="products-table">
+    <div class="empty-data" ng-if="!products.length">
+        Não há produtos cadastrados.
+    </div>
+    <table class="products-table" ng-if="products.length">
         <thead>
             <tr>
                 <td>ID</td>
