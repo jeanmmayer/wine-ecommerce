@@ -11,23 +11,20 @@
         <!-- Defining the viewport for width adaptive purpose -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Jean Mayer - SoftExpert</title>
+        <title>SoftWine - SoftExpert</title>
 
         <!-- App css -->
-        <!-- <link href="resources/css/bundle.css" rel="stylesheet"> -->
+        <link href="resources/css/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="resources/css/bundle.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body ng-controller="mainController">
+
+        <?php include_once "views/partials/header.php"; ?>
 
         <ng-view></ng-view>
 
-        <footer>
-            <p class="text-center">
-                Developed by <a href="https://www.linkedin.com/in/jean-michael-m-345ba092/" target="_blank">Jean Michael Mayer</a>
-                for
-                <a href="https://www.softexpert.com/" target="_blank"> SoftExpert </a>
-            </p>
-        </footer>
+        <?php include_once "views/partials/footer.php"; ?>
 
         <!-- angular scripts -->
         <script src="node_modules/angular/angular.min.js"></script>
@@ -35,6 +32,7 @@
 
         <!-- application scripts -->
         <script src="resources/js/app.js"></script>
+        <script src="resources/js/main.js"></script>
 
         <!-- services -->
         <script src="resources/js/services/products.service.js"></script>

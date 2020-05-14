@@ -1,13 +1,22 @@
-app.controller('newProductController', [
+app.controller('newProductsController', [
 	"products",
+	"orders",
 	"$scope",
 	"$location",
 	function(
 		products,
+		orders,
 		$scope,
 		$location
 	) {
 
-        console.log("cadastra produto controller");
+	$scope.loadProductType = function() {
+		var request = products.listProductType();
+		request.then(function(response) {
+			$scope.productTypes = response;
+		});
+	};
+
+	$scope.loadProductType();
 
 }]);

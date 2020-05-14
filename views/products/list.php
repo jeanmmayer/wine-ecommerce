@@ -1,36 +1,35 @@
-<table>
-    <tr>
-        <td>ID</td>
-        <td>Tipo</td>
-        <td>Nome</td>
-        <td>Descrição</td>
-        <td>Peso</td>
-        <td>Preço</td>
-        <td></td>
-    </tr>
-    <tr ng-repeat="p in products">
-        <td>{{ p.id }}</td>
-        <td>{{ p.type_name }}</td>
-        <td>{{ p.name }}</td>
-        <td>{{ p.description }}</td>
-        <td>{{ p.weight }}</td>
-        <td>{{ p.price }}</td>
-        <td>
-            <button ng-click="editProduct(p.id)">Editar</button>
-            <button ng-click="removeProduct(p.id)">Excluir</button>
-        </td>
-    </tr>
-</table>
+<div class="container products-container">
+    <button
+        class="btn-default"
+        ng-click="redirect('products/new')"
+    >
 
-<ul>
-    <li >
-        {{ item.id }}
-    </li>
-</ul>
+        <i class="fa fa-plus"></i> Cadastrar Produto
+    </button>
 
-<a href="#!/products/new"> cadastra produto </a>
-
-<a href="#!/products/edit"> edita produto </a>
-
-
-<a href="#!/orders"> lista pedidos </a>
+    <table class="products-table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Tipo</td>
+                <td>Nome</td>
+                <td>Peso (KG)</td>
+                <td>Preço (R$)</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="p in products">
+                <td>{{ p.id }}</td>
+                <td>{{ p.type_name }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.weight }}</td>
+                <td>{{ p.price }}</td>
+                <td>
+                    <button ng-click="editProduct(p.id)">Editar</button>
+                    <button ng-click="removeProduct(p.id)">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

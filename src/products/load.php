@@ -24,4 +24,4 @@ $sql = "
         p.id = $id
     ";
 
-echo json_encode(executeQuery($con, $sql));
+echo json_encode(listingQuery($con, $sql));

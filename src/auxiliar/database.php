@@ -16,12 +16,30 @@ function closeCon($con) {
     $con->close();
 }
 
-function executeQuery($con, $query) {
-
+function listingQuery($con, $query) {
     $result = $con->query($query)->fetch_all(MYSQLI_ASSOC);
     if (!$result) {
-        throw new Exception($con->error);
+        return [];
     }
-
     return $result;
+}
+
+function operationQuery($con, $query) {
+    if($con->query($query)) {
+        http_response_code(200);
+        return ['success' => true];
+    } else {
+        http_response_code(400);
+        return ['success' => false];
+    }
+}
+
+function insertionQuery($con, $query) {
+    if($con->query($query)) {
+        http_response_code(200);
+        return ['success' => true, 'id' => mysqli_insert_id($con)];
+    } else {
+        http_response_code(400);
+        return ['success' => false];
+    }
 }

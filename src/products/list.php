@@ -23,4 +23,4 @@ $sql = "
         p.status = 1
     LIMIT $page, 10";
 
-echo json_encode(executeQuery($con, $sql));
+echo json_encode(listingQuery($con, $sql));

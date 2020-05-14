@@ -1,0 +1,29 @@
+header {
+    height: 90px;
+    background-color: rgba(100, 6, 36, .7);
+    width: 100%;
+    color: white;
+    border-bottom: 1px solid rgba(100, 6, 36, .9);
+}
+
+header .logo {
+    height: 90px;
+}
+
+header .header-container {
+    display: flex;
+    height: 90px;
+    overflow: hidden;
+    align-items: center;
+}
+
+header .header-container a:not(.logo-div) {
+    line-height: 90px;
+    padding: 0 15px;
+    font-size: 19px;
+    transition: .3s;
+}
+
+header .header-container a:not(.logo-div):hover {
+    background-color: rgba(100, 6, 36, .5);
+}

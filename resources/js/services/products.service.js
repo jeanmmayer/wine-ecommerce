@@ -51,7 +51,7 @@ app.factory('products', function($http) {
 	var remove = function(data) {
         return $http({
             method:"POST",
-            data: data,
+            data: 'id=' + data,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
             url: "src/products/remove.php",
         }).then(function(result) {

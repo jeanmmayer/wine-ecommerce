@@ -14,4 +14,4 @@ $sql = "
         status = 1
 ";
 
-echo json_encode(executeQuery($con, $sql));
+echo json_encode(listingQuery($con, $sql));
