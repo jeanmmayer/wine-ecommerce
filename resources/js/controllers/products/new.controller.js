@@ -1,7 +1,11 @@
 app.controller('newProductController', [
+	"products",
 	"$scope",
+	"$location",
 	function(
-		$scope
+		products,
+		$scope,
+		$location
 	) {
 
         console.log("cadastra produto controller");

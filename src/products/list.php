@@ -6,6 +6,21 @@ $con = openCon();
 
 $page = resolvePage($_POST['page']);
 
-$sql = "SELECT * FROM products LIMIT $page, 10";
+$sql = "
+    SELECT
+        p.id,
+        p.name,
+        p.description,
+        p.weight,
+        p.price,
+        p.image,
+        t.name type_name
+    FROM
+        products p
+    LEFT JOIN
+        product_type t ON t.id = p.id_type
+    WHERE
+        p.status = 1
+    LIMIT $page, 10";
 
 echo json_encode(executeQuery($con, $sql));

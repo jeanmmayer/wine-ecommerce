@@ -11,6 +11,15 @@ app.factory('products', function($http) {
         }).then(function(result) {
             return result.data;
         });
+    };
+
+    var listProductType = function() {
+        return $http({
+            method:"POST",
+            url: "src/products/list_product_type.php",
+        }).then(function(result) {
+            return result.data;
+        });
 	};
 
 	var register = function(data) {
@@ -31,7 +40,7 @@ app.factory('products', function($http) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
             url: "src/products/load.php",
         }).then(function(result) {
-            return result;
+            return result.data[0];
         });
 	};
 
@@ -52,6 +61,7 @@ app.factory('products', function($http) {
 
     return {
 		list: list,
+		listProductType: listProductType,
 		register: register,
 		load: load,
 		setIdEdit: setIdEdit,

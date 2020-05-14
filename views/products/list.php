@@ -10,7 +10,7 @@
     </tr>
     <tr ng-repeat="p in products">
         <td>{{ p.id }}</td>
-        <td>{{ p.type_desc }}</td>
+        <td>{{ p.type_name }}</td>
         <td>{{ p.name }}</td>
         <td>{{ p.description }}</td>
         <td>{{ p.weight }}</td>
