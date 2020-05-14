@@ -1,17 +1,41 @@
 app.factory('orders', function($http) {
 
-	var email_pesquisa = "";
+    var list = function(page) {
+        return $http({
+            method:"POST",
+            data: "page=" + page,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
+            url: "src/orders/list.php",
+        }).then(function(result) {
+            return result.data;
+        });
+    };
 
-    var setEmail = function(email) {
-        email_pesquisa = email;
+	var register = function(data) {
+        return $http({
+            method:"POST",
+            data: data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
+            url: "src/orders/new.php",
+        }).then(function(result) {
+            return result;
+        });
 	};
 
-	var getEmail = function() {
-		return email_pesquisa;
+	var remove = function(data) {
+        return $http({
+            method:"POST",
+            data: 'id=' + data,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
+            url: "src/orders/remove.php",
+        }).then(function(result) {
+            return result;
+        });
 	};
 
     return {
-		setEmail: setEmail,
-		getEmail: getEmail
-	};
+		list: list,
+		register: register,
+		remove: remove
+    };
 });

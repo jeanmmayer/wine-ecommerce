@@ -20,7 +20,7 @@ header .header-container {
 header .header-container a:not(.logo-div) {
     line-height: 90px;
     padding: 0 15px;
-    font-size: 19px;
+    font-size: 18px;
     transition: .3s;
 }
 

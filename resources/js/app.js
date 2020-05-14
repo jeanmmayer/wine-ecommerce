@@ -18,6 +18,9 @@ app.config(function($routeProvider) {
         }).when('/orders', {
             templateUrl: 'views/orders/list.php',
             controller: 'listOrdersController'
+        }).when('/orders/new', {
+            templateUrl: 'views/orders/new.php',
+            controller: 'newOrderController'
 		}).otherwise({ redirectTo: '/products' })
 });
 

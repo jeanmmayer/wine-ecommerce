@@ -1,12 +1,17 @@
 <div class="container products-container">
-    <button
-        class="btn-default"
-        ng-click="redirect('products/new')"
-    >
+    <div class="page-title">
+        <h3>
+            Produtos
+            <button
+                class="btn-default"
+                ng-click="redirect('products/new')"
+            >
 
-        <i class="fa fa-plus"></i> Cadastrar Produto
-    </button>
-
+                <i class="fa fa-plus"></i> Cadastrar
+            </button>
+        </h3>
+        <hr>
+    </div>
     <table class="products-table">
         <thead>
             <tr>
@@ -20,14 +25,14 @@
         </thead>
         <tbody>
             <tr ng-repeat="p in products">
-                <td>{{ p.id }}</td>
+                <td>#{{ p.id }}</td>
                 <td>{{ p.type_name }}</td>
                 <td>{{ p.name }}</td>
                 <td>{{ p.weight }}</td>
                 <td>{{ p.price }}</td>
                 <td>
-                    <button ng-click="editProduct(p.id)">Editar</button>
-                    <button ng-click="removeProduct(p.id)">Excluir</button>
+                    <button class="btn" ng-click="editProduct(p.id)"><i class="fa fa-edit"></i></button>
+                    <button class="btn" ng-click="removeProduct(p.id)"><i class="fa fa-close"></i></button>
                 </td>
             </tr>
         </tbody>

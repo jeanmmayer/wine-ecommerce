@@ -1,4 +1,4 @@
-app.controller('newProductsController', [
+app.controller('newProductController', [
 	"products",
 	"orders",
 	"$scope",

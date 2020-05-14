@@ -40,6 +40,7 @@
 
         <!-- controllers -->
         <script src="resources/js/controllers/orders/list.controller.js"></script>
+        <script src="resources/js/controllers/orders/new.controller.js"></script>
         <script src="resources/js/controllers/products/list.controller.js"></script>
         <script src="resources/js/controllers/products/new.controller.js"></script>
         <script src="resources/js/controllers/products/edit.controller.js"></script>
