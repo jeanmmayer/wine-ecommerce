@@ -5,3 +5,30 @@
     z-index: 2;
     background-color: rgba(0, 0, 0, .2);
 }
+
+.modal-container {
+    margin: 50px auto;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    padding: 20px;
+}
+
+.modal-header {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.modal-content {
+    padding: 20px 0;
+}
+
+.modal-btn-container {
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    padding: 15px 0 0 0;
+    text-align: right;
+}

@@ -14,7 +14,7 @@
         </h3>
         <hr>
     </div>
-    <form ng-submit="save()">
+    <form class="form" ng-submit="generateResume()">
         <div class="input-container">
             <div>
                 Cliente
@@ -22,7 +22,7 @@
             <input
                 ng-model="customer"
                 type="text"
-                placeholder="Cliente"
+                placeholder="Digite o nome do cliente"
                 required
             />
         </div>
@@ -59,17 +59,18 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="p in productsAdded">
-                        <td>#{{ p.id }}</td>
-                        <td>{{ p.type_name }}</td>
+
+                        <td>#{{ p.product.id }} </td>
+                        <td>{{ p.product.type_name }}</td>
                         <td>
                             <div class="prod-name">
-                                {{ p.name }}
+                                {{ p.product.name }}
                             </div>
                         </td>
-                        <td>{{ p.weight }}</td>
-                        <td>{{ p.price }}</td>
+                        <td>{{ p.product.weight }}</td>
+                        <td>{{ p.product.price }}</td>
                         <td>{{ p.quantity }}</td>
-                        <td>2323</td>
+                        <td> {{ calculateIndividualPrice(p.product.price, p.quantity) }} </td>
                     </tr>
                 </tbody>
             </table>
@@ -78,7 +79,7 @@
             <button class="btn btn-success" type="submit">
                 <i class="fa fa-save"></i> Fechar Pedido
             </button>
-            <button class="btn" ng-click="openAddProduct" type="button">
+            <button class="btn" ng-click="showAddProductModal = true" type="button">
                 <i class="fa fa-plus"></i> Adicionar Produto
             </button>
         </div>

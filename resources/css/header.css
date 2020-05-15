@@ -1,13 +1,14 @@
 header {
     height: 90px;
-    background-color: rgba(100, 6, 36, .7);
+    background-color: rgb(100, 6, 36);
     width: 100%;
     color: white;
     border-bottom: 1px solid rgba(100, 6, 36, .9);
 }
 
 header .logo {
-    height: 90px;
+    height: 70px;
+    margin-top: 10px;
 }
 
 header .header-container {
@@ -25,5 +26,5 @@ header .header-container a:not(.logo-div) {
 }
 
 header .header-container a:not(.logo-div):hover {
-    background-color: rgba(100, 6, 36, .5);
+    background-color: rgba(138, 72, 93, .5);
 }

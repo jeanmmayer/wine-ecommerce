@@ -11,7 +11,7 @@
         <!-- Defining the viewport for width adaptive purpose -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>SoftWine - SoftExpert</title>
+        <title>SoftWines - SoftExpert</title>
 
         <!-- App css -->
         <link href="resources/css/libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">

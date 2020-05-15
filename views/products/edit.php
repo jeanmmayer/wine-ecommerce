@@ -12,7 +12,7 @@
         </h3>
         <hr>
     </div>
-    <form ng-submit="save()">
+    <form class="form" ng-submit="save()">
         <div class="input-container">
             <div>
                 Nome

@@ -1,4 +1,4 @@
-input[type='text'], textarea, select {
+input[type='text'], textarea, select, input[type='number'] {
     padding: 10px;
     resize: none;
     border: 1px solid rgba(0, 0, 0, .2);
@@ -7,27 +7,27 @@ input[type='text'], textarea, select {
     width: 300px;
 }
 
-form {
+.form {
     max-width: 600px;
     margin: auto;
 }
 
-form .input-container {
+.form .input-container {
     text-align: center;
     margin: 10px 0;
 }
 
-form button {
+.form button {
     margin-top: 20px;
 }
 
-form .input-container div {
+.form .input-container div {
     max-width: 322px;
     text-align: left;
     padding: 6px 0;
     margin: auto;
 }
 
-form select {
+.form select {
     width: 322px;
 }
