@@ -38,6 +38,8 @@ function getProducts($con, $id_order) {
             order_product op
         LEFT JOIN
             products p ON p.id = op.id_product
+        WHERE
+            op.id_order = $id_order
     ";
 
     return listingQuery($con, $sql);

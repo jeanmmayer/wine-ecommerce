@@ -1,10 +1,12 @@
 app.controller('newOrderController', [
 	"products",
+	"orders",
 	"mathCalcs",
 	"$scope",
 	"$location",
 	function(
 		products,
+		orders,
 		mathCalcs,
 		$scope,
 		$location
@@ -59,7 +61,11 @@ app.controller('newOrderController', [
 	};
 
 	$scope.save = function() {
-
+		var prod = orders.register(JSON.stringify($scope.resume));
+		prod.then(function(result) {
+			// $scope.products = result;
+		}, function() {
+		});
 	};
 
 	$scope.calculateIndividualPrice = function(price, quantity) {

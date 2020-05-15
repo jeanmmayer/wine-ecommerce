@@ -4,42 +4,68 @@ include "../bootstrap.php";
 
 $con = openCon();
 
-$sql = generateSql();
-
-if(isset($_POST['id'])) {
-    echo json_encode(operationQuery($con, $sql));
-} else {
-    echo json_encode(insertionQuery($con, $sql));
+if($id_order = insertOrder($con)) {
+    if(insertOrderProducts($id_order, $con)) {
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['success' => false]);
+    }
 }
 
-function generateSql() {
-    $name = isset($_POST['name']) ? $_POST['name'] : '';
-    $description = isset($_POST['description']) ? $_POST['description'] : '';
-    $weight = isset($_POST['weight']) ? $_POST['weight'] : '';
-    $price = isset($_POST['price']) ? $_POST['price'] : '';
-    $image = isset($_POST['image']) ? $_POST['image'] : '';
-    $id_type = isset($_POST['id_type']) ? $_POST['id_type'] : '';
+function insertOrder($con) {
+    $data = json_decode($_POST['data'], true);
 
-    return "
+    $customer = $data['customer'];
+    $distance = $data['distance'];
+    $value = $data['calcs']['total'];
+    $freight = $data['calcs']['freightTotal'];
+
+    $sql = "
         INSERT INTO
-            products (
-                name,
-                description,
-                weight,
-                price,
-                image,
-                id_type,
+            orders (
+                customer,
+                distance,
+                value,
+                freight,
                 status
             ) VALUES (
-                '$name',
-                '$description',
-                $weight,
-                $price,
-                '$image',
-                $id_type,
+                '$customer',
+                $distance,
+                $value,
+                $freight,
                 1
             )
     ";
+
+    $result = insertionQuery($con, $sql);
+
+    return $result['id'];
+
 }
+
+function insertOrderProducts($id_order, $con) {
+    $data = json_decode($_POST['data'], true);
+
+    foreach($data['products'] as $prod) {
+        $id_product = $prod['product']['id'];
+        $quantity = $prod['quantity'];
+
+        $sql = "
+            INSERT INTO
+                order_product (id_order, id_product, quantity)
+            VALUES
+                ($id_order, $id_product, $quantity)
+         ";
+
+        if(!insertionQuery($con, $sql)) {
+            // Trabalhar nas mensagens de erro e retorno ao usuário
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 
 closeCon($con);

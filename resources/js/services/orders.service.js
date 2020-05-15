@@ -14,7 +14,7 @@ app.factory('orders', function($http) {
 	var register = function(data) {
         return $http({
             method:"POST",
-            data: data,
+            data: "data=" + data,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'} ,
             url: "src/orders/new.php",
         }).then(function(result) {

@@ -21,8 +21,9 @@
             <tr>
                 <td>ID</td>
                 <td>Cliente</td>
-                <td>Produtos</td>
+                <td>Quantidade / Produtos</td>
                 <td>Distância (km)</td>
+                <td>Frete (R$)</td>
                 <td>Preço Total (R$)</td>
             </tr>
         </thead>
@@ -43,6 +44,7 @@
                     </table>
                 </td>
                 <td>{{ o.distance }}</td>
+                <td>{{ o.freight }}</td>
                 <td>{{ o.value }}</td>
             </tr>
         </tbody>
