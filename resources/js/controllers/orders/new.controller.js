@@ -63,7 +63,8 @@ app.controller('newOrderController', [
 	$scope.save = function() {
 		var prod = orders.register(JSON.stringify($scope.resume));
 		prod.then(function(result) {
-			// $scope.products = result;
+			$scope.showResumeModal = false;
+			$scope.redirect('orders');
 		}, function() {
 		});
 	};

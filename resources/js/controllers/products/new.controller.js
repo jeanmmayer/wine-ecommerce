@@ -27,7 +27,7 @@ app.controller('newProductController', [
 
 		var request = products.register(params);
 		request.then(function(response) {
-			$scope.redirect('#!/products');
+			$scope.redirect('products');
 		});
 	};
 

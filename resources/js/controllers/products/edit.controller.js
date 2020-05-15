@@ -16,7 +16,7 @@ app.controller('editProductController', [
 		request.then(function(response) {
 			$scope.product = response;
 			if(!response.id) {
-				$scope.redirect("#!/products")
+				$scope.redirect("products")
 			};
 		});
 	};
@@ -39,7 +39,7 @@ app.controller('editProductController', [
 
 		var request = products.register(params);
 		request.then(function(response) {
-			$scope.redirect('#!/products');
+			$scope.redirect('products');
 		});
 	};
 
