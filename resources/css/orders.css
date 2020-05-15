@@ -1,0 +1,9 @@
+.resume-modal .modal-content div {
+    padding: 5px;
+}
+
+.resume-modal table.values-table {
+    width: auto;
+    margin: 20px auto auto auto;
+    background-color: antiquewhite;
+}

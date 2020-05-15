@@ -50,9 +50,7 @@ app.controller('newOrderController', [
 			"products": $scope.productsAdded,
 			"customer": $scope.customer,
 			"distance": $scope.distance,
-			"total_value": mathCalcs.resumeTotal($scope.distance, $scope.productsAdded),
-			"total_weight": mathCalcs.weightTotal($scope.productsAdded),
-			"only_freight": mathCalcs.freightTotal($scope.distante, $scope.productsAdded)
+			"calcs": mathCalcs.resumeCalcs()
 		};
 	};
 

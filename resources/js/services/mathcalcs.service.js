@@ -2,46 +2,38 @@ app.factory('mathCalcs', function($http) {
 
     var distance, products;
 
-    var resumeTotal = function() {
+    var resumeCalcs = function() {
+        let totalWeight = 0;
+        let productsValue = 0;
+        let freightTotal = 0;
+
+        // Soma o peso e o preço dos produtos
         for(var i = 0; i < products.length; i++) {
             totalWeight += products[i].quantity * parseFloat(products[i].product.weight);
             productsValue += products[i].quantity * parseFloat(products[i].product.price);
         }
 
-        return "ok";
-    };
+        // Calcula o valor total to frete, considerando a distância
+        freightTotal = this.freightTotal(totalWeight);
 
-    // Peso total de todos os produtos
-    var weightTotal = function() {
-        let total = 0;
-
-        for(var i = 0; i < products.length; i++) {
-            total += products[i].quantity * parseFloat(products[i].product.weight);
-        }
-
-        console.log("Peso total: ")
-
-        return total;
+        return {
+            "productsValue": parseFloat(productsValue).toFixed(2),
+            "freightTotal": parseFloat(freightTotal).toFixed(2),
+            "total": parseFloat((productsValue + freightTotal)).toFixed(2)
+        };
     };
 
     // Valor total do frete
-    var freightTotal = function() {
-        if(distance < 100) {
-
-        }
-    };
-
-    // Valor da soma dos preços dos produtos
-    var productsTotal = function() {
-        let total = 0;
-
-        for(var i = 0; i < products.length; i++) {
-            total += products[i].quantity * parseFloat(products[i].product.weight);
+    var freightTotal = function(weight) {
+        if(distance < 100 && distance > 0) {
+            return weight * 5;
         }
 
-        console.log("Valor total dos produtos: " + total);
+        if(distance > 0) {
+            return (weight * distance) / 100;
+        }
 
-        return total;
+        return 0;
     };
 
     var setProducts = function(p) {
@@ -53,8 +45,7 @@ app.factory('mathCalcs', function($http) {
     };
 
     return {
-		resumeTotal: resumeTotal,
-		weightTotal: weightTotal,
+		resumeCalcs: resumeCalcs,
         freightTotal: freightTotal,
         setDistance: setDistance,
         setProducts: setProducts
