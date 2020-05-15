@@ -1,9 +1,11 @@
 app.controller('newOrderController', [
 	"products",
+	"mathCalcs",
 	"$scope",
 	"$location",
 	function(
 		products,
+		mathCalcs,
 		$scope,
 		$location
 	) {
@@ -40,6 +42,22 @@ app.controller('newOrderController', [
 
 	$scope.generateResume = function() {
 		$scope.showResumeModal = true;
+
+		mathCalcs.setProducts($scope.productsAdded);
+		mathCalcs.setDistance($scope.distance);
+
+		$scope.resume = {
+			"products": $scope.productsAdded,
+			"customer": $scope.customer,
+			"distance": $scope.distance,
+			"total_value": mathCalcs.resumeTotal($scope.distance, $scope.productsAdded),
+			"total_weight": mathCalcs.weightTotal($scope.productsAdded),
+			"only_freight": mathCalcs.freightTotal($scope.distante, $scope.productsAdded)
+		};
+	};
+
+	$scope.cancelResume = function() {
+		$scope.showResumeModal = false
 	};
 
 	$scope.save = function() {
@@ -47,7 +65,7 @@ app.controller('newOrderController', [
 	};
 
 	$scope.calculateIndividualPrice = function(price, quantity) {
-		return parseFloat(price * quantity).toFixed(2);;
+		return parseFloat(price * quantity).toFixed(2);
 	};
 
 	$scope.listProducts();

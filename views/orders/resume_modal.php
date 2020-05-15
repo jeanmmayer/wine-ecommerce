@@ -7,11 +7,11 @@
             Todos os valores aqui
         </div>
         <div class="modal-btn-container">
-            <button class="btn" ng-click="showResumeModal = false">
+            <button class="btn" ng-click="cancelResume()">
                 <i class="fa fa-close"></i> Cancelar
             </button>
-            <button class="btn btn-default" ng-click="save()">
-                <i class="fa fa-plus"></i> Finalizar
+            <button class="btn btn-success" ng-click="save()">
+                <i class="fa fa-check"></i> Finalizar
             </button>
         </div>
     </div>

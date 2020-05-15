@@ -38,6 +38,7 @@
         <!-- services -->
         <script src="resources/js/services/products.service.js"></script>
         <script src="resources/js/services/orders.service.js"></script>
+        <script src="resources/js/services/mathcalcs.service.js"></script>
 
         <!-- controllers -->
         <script src="resources/js/controllers/orders/list.controller.js"></script>
@@ -45,9 +46,6 @@
         <script src="resources/js/controllers/products/list.controller.js"></script>
         <script src="resources/js/controllers/products/new.controller.js"></script>
         <script src="resources/js/controllers/products/edit.controller.js"></script>
-
-        <!-- plugins (all self-made) -->
-        <script src="resources/js/plugins/confirm.js"></script>
 
     </body>
 

@@ -1,4 +1,5 @@
 <?php include_once "add_product_modal.php"; ?>
+<?php include_once "resume_modal.php"; ?>
 
 <div class="container orders-container">
     <div class="page-title">
@@ -76,7 +77,7 @@
             </table>
         </div>
         <div class="text-center">
-            <button class="btn btn-success" type="submit">
+            <button class="btn btn-default" type="submit">
                 <i class="fa fa-save"></i> Fechar Pedido
             </button>
             <button class="btn" ng-click="showAddProductModal = true" type="button">
