@@ -16,7 +16,7 @@ app.controller('editProductController', [
 		request.then(function(response) {
 			$scope.product = response;
 			if(!response.id) {
-				$scope.redirect("products")
+				$scope.redirect("products");
 			};
 		});
 	};
