@@ -1,6 +1,3 @@
-
-![logo](https://i.ibb.co/4svckDx/logo.png)
-
 Sistema simples de cadastro de produtos e realização de vendas, mostrando o valor da venda com cálculo de frete.
 
 
